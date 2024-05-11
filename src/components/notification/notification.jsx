@@ -1,3 +1,3 @@
 export default function Notification({ amount }) {
-  return <p>{!amount && "No feedback yet"}</p>;
+  return amount == 0 && <p>No feedback yet</p>;
 }

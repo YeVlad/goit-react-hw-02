@@ -25,6 +25,7 @@ function App() {
   }, [thought]);
 
   const totalFeedback = thought.good + thought.neutral + thought.bad;
+  const PositiveFeedback = Math.round((thought.good / totalFeedback) * 100);
 
   function updateFeedback(feedbackType) {
     switch (feedbackType) {
@@ -68,7 +69,11 @@ function App() {
         amount={totalFeedback}
       />
       <Notification amount={totalFeedback} />
-      <Feedback obj={thought} amount={totalFeedback} />
+      <Feedback
+        obj={thought}
+        amount={totalFeedback}
+        statProc={PositiveFeedback}
+      />
     </>
   );
 }

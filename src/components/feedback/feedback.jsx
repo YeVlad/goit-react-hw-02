@@ -1,4 +1,4 @@
-export default function Feedback({ obj, amount }) {
+export default function Feedback({ obj, amount, statProc }) {
   return (
     amount != 0 && (
       <ul className="result">
@@ -15,7 +15,7 @@ export default function Feedback({ obj, amount }) {
           <p>Total: {amount}</p>
         </li>
         <li>
-          <p>Positive: {Math.round((obj.good / amount) * 100)}%</p>
+          <p>Positive: {statProc}%</p>
         </li>
       </ul>
     )
