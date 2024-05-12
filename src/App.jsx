@@ -68,12 +68,14 @@ function App() {
         cleaning={resetState}
         amount={totalFeedback}
       />
-      <Notification amount={totalFeedback} />
-      <Feedback
-        obj={thought}
-        amount={totalFeedback}
-        statProc={PositiveFeedback}
-      />
+      {totalFeedback == 0 && <Notification />}
+      {totalFeedback != 0 && (
+        <Feedback
+          obj={thought}
+          amount={totalFeedback}
+          statProc={PositiveFeedback}
+        />
+      )}
     </>
   );
 }
